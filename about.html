@@ -4,6 +4,29 @@
         <meta charset="utf-8"/>
         <title>Interesting Figures in Christian History: Simeon Stylites</title>
         <meta name="viewport" content="width=device-width"/>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const bitcoinPrice = document.querySelector("bitcoin-price");
+            async function fetchBitcoinPrice(){
+
+                try {
+
+                    const response = await fetch("https://api.coincap.io/v2/assets");
+                    const data = await response.json();
+                    console.log(data);
+                    bitcoinPrice.textContent = data.data[0].priceUsd;
+                    console.log(bitcoinPrice.textContent);
+
+                } catch (error){
+                    console.error("Error fetching Bitcoin price", error);
+                }
+                
+            }
+
+            fetchBitcoinPrice();
+            setInterval(fetchBitcoinPrice, 10000);
+        });
+    </script>
     </head>
 
 
@@ -27,7 +50,6 @@
             font-size: 22px;
             text-align: center;
             padding: 25px;
-            
         }
 
         footer {
@@ -50,6 +72,8 @@
 
         .img-container {
             text-align: center;
+            display: inline-block;
+            overflow: hidden;
         }
 
         .zoomed {
@@ -129,32 +153,7 @@
     </style>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    const img = document.querySelector(".img-container img");
-
-    img.addEventListener("click", function () {
-        this.classList.toggle("zoomed"); 
-    });
-});
-
-
-    // mouse position updating
-    function updateMagnifierPosition(event) {
-        const magnifier = document.querySelector(".magnifying-glass");
-        if (magnifier) {
-            magnifier.style.left = event.clientX + "px";
-            magnifier.style.top = window.scrollY + event.clientY + "px"; // Adjust for scrolling
-        }
-    }
-
-    // Update on both mouse move and scroll
-    document.addEventListener("mousemove", updateMagnifierPosition);
-    document.addEventListener("scroll", updateMagnifierPosition);
-
-
-    // API stuff
-
-    document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
             const bitcoinPriceElement = document.querySelector(".bitcoin-price");
 
             async function fetchBitcoinPrice() {
@@ -173,6 +172,8 @@
             setInterval(fetchBitcoinPrice, 10000); // 10000 ms = 10 seconds
             });
 
+
+        
     </script>
 
     <body>
@@ -185,8 +186,8 @@
 
         <div class="topnav">
             <a href="#home">Home</a>
-            <a class="active" href="#figures">Figures</a>
-            <a href="./about.html">About</a>
+            <a href="./index.html">Figures</a>
+            <a class="active" href="./about.html">About</a>
         </div>
 
         <main>
@@ -195,46 +196,21 @@
 
                 <article>
 
-                    <div class="img-container">
-                        <img src="simeon.jpeg" />
-                    </div>
                     
                     
-                    <h1>Simeon Stylites</h1>
+                    <h1>Details</h1>
 
                     
 
     
                     <p>
-    
-                        Simeon Stylites was a Syrian Christian ascetic who was the first known <a href="https://en.wikipedia.org/wiki/Stylite">stylite</a>, also known as pillar-saint. 
-    
-                    </p>
-    
-                    <p>
-    
-                        He began his life atop a pillar northwest of Aleppo around 420 AD. His first pillar was about 2 metres high, and was subsequently extended to 15 metres. He remained on top of his pillar for 37 years, where he lived permanently exposed to the weather, and only receiving small gifts of food and water from disciples using a ladder. 
-    
-                    </p>
-    
-                    <p>
-                        More broadly, stylites like Simeon would live on pillars and preached, fasted, and prayed from their position. It was seen as the extreme, logical end to Christian asceticism, where individuals would deprive themselves of worldly pleasures and needs in order to pursue closeness to God.
-    
-                    </p>
-    
-                    <p>
-    
-                        Out of respect for Simeon's dedication, the Roman Emperor Theodosius listened to his counsel amidst the <a href="https://en.wikipedia.org/wiki/Council_of_Chalcedon"></a>Council of Chalcedon. Simeon also inspired many imitators across the Christian Levant. He is commemorated as a saint in the Coptic Orthodox, Eastern Orthodox, and Roman Catholic Churches.
-    
-                    </p>
 
-                    <p>
-                        Find out more in the follow podcast:
-                    </p>
+                        For the new HTML property, I used an iframe to embed an Apple Podcast related to this topic.
 
-                    <div class="podcast-holder">
-                        <iframe height="175" width="100%" title="Media player" src="https://embed.podcasts.apple.com/us/podcast/st-simeon-the-stylite/id1597828386?i=1000644186326&amp;itscg=30200&amp;itsct=podcast_box_player&amp;ls=1&amp;mttnsubad=1000644186326&amp;theme=auto" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-                    </div>
+                        For the new CSS property, I used cursor: zoom-in for img to trigger a zoom in.
+
+                        
+    </p>
 
                     
     
@@ -246,9 +222,10 @@
             
             
         </main>
-
         <footer> 
             <p>The price of bitcoin is now: <span class="bitcoin-price">Loading...</span> </p> 
         </footer>
     </body>
+
+    
 </html>
