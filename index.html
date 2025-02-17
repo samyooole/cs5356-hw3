@@ -11,18 +11,62 @@
         body {
             background-color: black;
         }
+
         p {
             color: lightgray;
+            font-family: "Helvetica";
         }
 
         header {
             color: white;
             font-family: 'Baskerville';
             font-size: 22px;
+            text-align: center;
         }
 
         h1 {
             color: white;
+            font-family: "Helvetica";
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .img-container {
+            text-align: center;
+        }
+
+
+        /* style links inside navbar */
+
+        .topnav {
+            display: flex; /* asserts flexbox */
+            justify-content: space-around;
+        }
+
+        .topnav a {
+            flex-grow: 1;
+            float: left;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            font-size: 15px;
+            text-decoration: none; /* no underline for link */
+            font-family: 'Baskerville';
+
+        }
+
+        .topnav a.active {
+            background-color: orange;
+            color:black;
+            
+        }
+
+        .topnav a:hover {
+            background-color: orange;
+            color: black;
         }
     </style>
 
@@ -32,38 +76,55 @@
             Interesting Figures in Christian History
         </header>
 
+        <!-- Navigation bar here -->
+
+        <div class="topnav">
+            <a href="#home">Home</a>
+            <a class="active" href="#figures">Figures</a>
+            <a href="#about">About</a>
+        </div>
+
         <main>
 
-            <article>
+            <div class="blog">
 
-                <img src="simeon.jpeg" />
-                
-                <h1>Simeon Stylites</h1>
+                <article>
 
-                <p>
+                    <div class="img-container">
+                        <img src="simeon.jpeg" />
+                    </div>
+                    
+                    
+                    <h1>Simeon Stylites</h1>
+    
+                    <p>
+    
+                        Simeon Stylites was a Syrian Christian ascetic who was the first known <a href="https://en.wikipedia.org/wiki/Stylite">stylite</a>, also known as pillar-saint. 
+    
+                    </p>
+    
+                    <p>
+    
+                        He began his life atop a pillar northwest of Aleppo around 420 AD. His first pillar was about 2 metres high, and was subsequently extended to 15 metres. He remained on top of his pillar for 37 years, where he lived permanently exposed to the weather, and only receiving small gifts of food and water from disciples using a ladder. 
+    
+                    </p>
+    
+                    <p>
+                        More broadly, stylites like Simeon would live on pillars and preached, fasted, and prayed from their position. It was seen as the extreme, logical end to Christian asceticism, where individuals would deprive themselves of worldly pleasures and needs in order to pursue closeness to God.
+    
+                    </p>
+    
+                    <p>
+    
+                        Out of respect for Simeon's dedication, the Roman Emperor Theodosius listened to his counsel amidst the <a href="https://en.wikipedia.org/wiki/Council_of_Chalcedon"></a>Council of Chalcedon. Simeon also inspired many imitators across the Christian Levant. He is commemorated as a saint in the Coptic Orthodox, Eastern Orthodox, and Roman Catholic Churches.
+    
+                    </p>
+    
+                </article>
 
-                    Simeon Stylites was a Syrian Christian ascetic who was the first known <a href="https://en.wikipedia.org/wiki/Stylite">stylite</a>, also known as pillar-saint. 
+            </div>
 
-                </p>
-
-                <p>
-
-                    He began his life atop a pillar northwest of Aleppo around 420 AD. His first pillar was about 2 metres high, and was subsequently extended to 15 metres. He remained on top of his pillar for 37 years, where he lived permanently exposed to the weather, and only receiving small gifts of food and water from disciples using a ladder. 
-
-                </p>
-
-                <p>
-                    More broadly, stylites like Simeon would live on pillars and preached, fasted, and prayed from their position. It was seen as the extreme, logical end to Christian asceticism, where individuals would deprive themselves of worldly pleasures and needs in order to pursue closeness to God.
-
-                </p>
-
-                <p>
-
-                    Out of respect for Simeon's dedication, the Roman Emperor Theodosius listened to his counsel amidst the <a href="https://en.wikipedia.org/wiki/Council_of_Chalcedon"></a>Council of Chalcedon. Simeon also inspired many imitators across the Christian Levant. He is commemorated as a saint in the Coptic Orthodox, Eastern Orthodox, and Roman Catholic Churches.
-
-                </p>
-
-            </article>
+            
             
             
         </main>
