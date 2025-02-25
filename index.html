@@ -15,6 +15,15 @@
     </head>
 
     <!-- https://postimg.cc/xJH9RMrx -->
+
+    <!-- 
+    For the new HTML property, I used an iframe to embed an Apple Podcast related to this topic.
+
+    For the new CSS property, I used cursor: zoom-in for img to trigger a zoom in.
+
+    I learnt that it essentially replaces the cursor icon upon meeting particular conditions. It's pretty cool that it's all done within CSS styling, and you don't have to write any script code to make it work.
+
+    -->
     
 
 
@@ -122,10 +131,16 @@
             color: black;
         }
 
-        /* style blog div */
-
         .blog {
-            padding:30px;
+            padding: 10px;
+            max-width: 650px; 
+            margin: auto;
+        }
+
+        @media (min-width: 650px) { 
+            .blog {
+            padding: 10px;
+            }
         }
 
         .podcast-holder {
@@ -240,7 +255,7 @@
                     </p>
 
                     <p>
-                        Find out more in the follow podcast:
+                        Find out more in the following podcast:
                     </p>
 
                     <div class="podcast-holder">
